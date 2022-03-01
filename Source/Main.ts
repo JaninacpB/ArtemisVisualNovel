@@ -4,10 +4,18 @@ namespace Novel {
 
   console.log("Das Artemis Mysterium startet");
 
-  export let place = {
+  export let location = {
+    infrontManorDay: {
+      name: "infrontManorDay",
+      background: "assets/background/vorDemManorBackground.png"
+    },
+    infrontManorNight: {
+      name: "infrontManorNight",
+      background: "assets/background/vorDemManorBackground-night.png"
+    },
     entryManor: {
       name: "entry",
-      background: "Assets/"
+      background: "assets/background/entryBackground.png"
     }
   }
 
@@ -20,12 +28,44 @@ namespace Novel {
   //   }
   // }
 
+  let assetsChara = "assets/charakter/";
+
   export let character = {
+    sound: {
+      name: ""
+    },
+
     bronte: {
       name: "Bronte",
+      origin: ƒS.ORIGIN.BOTTOMLEFT,
       pose: {
-        standard: "",
-        thinking: ""
+        standard: assetsChara + "Bronte-happy.png",
+        thinking: assetsChara + "Bronte-think-first.png",
+        angry: assetsChara + "Bronte-angry-first.png",
+        sad: assetsChara + "Bronte-sad-first.png",
+        shout: assetsChara + "Bronte-shout-first.png"
+      }
+    },
+
+    maire: {
+      name: "Maire",
+      origin: ƒS.ORIGIN.BOTTOMLEFT,
+      pose: {
+        standard: assetsChara + "Assestentin-neutral.png",
+        embaressed: assetsChara + "Assestentin-emberassed.png",
+        sad: assetsChara + "Assestentin-sad.png",
+        happy: assetsChara + "Assestentin-happy.png",
+        fear: assetsChara + "Assestentin-fear.png",
+        laugh: assetsChara + "Assestentin-laugh.png"
+      }
+    },
+
+    remington: {
+      name: "Remington",
+      origin: ƒS.ORIGIN.BOTTOMLEFT,
+      pose: {
+        standard: assetsChara + "Remington-neutral-first.png",
+        angry: assetsChara + "Remington-angry-first.png"
       }
     }
   }
@@ -34,7 +74,7 @@ namespace Novel {
   export let item = {
     cloak: {
       name: "Umhang",
-      description: "„Er schützt dich vor nichts (abgesehen von dem Wetter vielleicht), er hilft dir nicht im Kampf, aber du siehst einfach fabelhaft aus!“",
+      description: "",
       image: ""
     },
   }
@@ -85,8 +125,12 @@ namespace Novel {
 
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
-      { scene: ChapterOneInfrontManor, name: "SceneOne" }
+      { scene: ChapterOneInfrontManor, name: "SceneOne" },
+      { id: "ChapterTwoEntryManor", scene: ChapterTwoEntryManor, name: "SceneTwo" }
     ];
+
+    let uiElement: HTMLElement = document.querySelector("[type=interface]");
+    dataForSave = ƒS.Progress.setData(dataForSave, uiElement);
 
     // start the sequence
     ƒS.Progress.go(scenes);
