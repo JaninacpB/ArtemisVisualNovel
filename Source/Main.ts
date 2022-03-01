@@ -1,4 +1,4 @@
-namespace Template {
+namespace Novel {
   export import ƒ = FudgeCore;
   export import ƒS = FudgeStory;
 
@@ -85,7 +85,7 @@ namespace Template {
 
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
-      { scene: Scene, name: "Scene" }
+      { scene: ChapterOneInfrontManor, name: "SceneOne" }
     ];
 
     // start the sequence

@@ -9,16 +9,28 @@
   <script src="FudgeStory/FudgeStory.js"></script>
   <script src="./Build/Template.js"></script>
   <title>Das Artemis Mysterium</title>
-  <splash src="assets/charakter/Titel.png"/>
+  <splash src="assets/charakter/Titel.png" />
 </head>
 
 <body>
+  <div class="canvasNachbau">
+    <div class="nachbauScene">
+      <div id="ausruf"> </div>
+    </div>
+  </div>
+
   <scene>
     <canvas></canvas>
 
+    <div id="storyDiv"></div>
+
     <speech id="speech">
-      <name><!--The name of the character speaking--></name>
-      <content><!--The text the character says--></content>
+      <name>
+        <!--The name of the character speaking-->
+      </name>
+      <content>
+        <!--The text the character says-->
+      </content>
     </speech>
 
     <dialog type="text">

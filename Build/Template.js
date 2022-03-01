@@ -1,10 +1,18 @@
 "use strict";
-var Template;
-(function (Template) {
-    Template.ƒ = FudgeCore;
-    Template.ƒS = FudgeStory;
+var Novel;
+(function (Novel) {
+    async function ChapterOneInfrontManor() {
+        Novel.ƒS.Text.addClass("novelPage");
+        return "";
+    }
+    Novel.ChapterOneInfrontManor = ChapterOneInfrontManor;
+})(Novel || (Novel = {}));
+var Novel;
+(function (Novel) {
+    Novel.ƒ = FudgeCore;
+    Novel.ƒS = FudgeStory;
     console.log("Das Artemis Mysterium startet");
-    Template.place = {
+    Novel.place = {
         entryManor: {
             name: "entry",
             background: "Assets/"
@@ -18,7 +26,7 @@ var Template;
     //     standard: ""
     //   }
     // }
-    Template.character = {
+    Novel.character = {
         bronte: {
             name: "Bronte",
             pose: {
@@ -28,14 +36,14 @@ var Template;
         }
     };
     // todo:
-    Template.item = {
+    Novel.item = {
         cloak: {
             name: "Umhang",
             description: "„Er schützt dich vor nichts (abgesehen von dem Wetter vielleicht), er hilft dir nicht im Kampf, aber du siehst einfach fabelhaft aus!“",
             image: ""
         },
     };
-    Template.dataForSave = {};
+    Novel.dataForSave = {};
     // let inGameMenu = {
     //     credits: "Credits",
     //     save: "Save",
@@ -63,20 +71,20 @@ var Template;
     //   }
     // }
     function showCredits() {
-        Template.ƒS.Text.addClass("novelPage");
-        Template.ƒS.Text.print("<h1> Credits </h1><p><b> Story: </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tamara Auber <br><b> Texte: </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tamara Auber <br><b> Bilder: </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tamara Auber<br><b>Titelbild: </b> &nbsp;&nbsp; Janina Bach<br></p>");
+        Novel.ƒS.Text.addClass("novelPage");
+        Novel.ƒS.Text.print("<h1> Credits </h1><p><b> Story: </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tamara Auber <br><b> Texte: </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tamara Auber <br><b> Bilder: </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tamara Auber<br><b>Titelbild: </b> &nbsp;&nbsp; Janina Bach<br></p>");
     }
-    Template.showCredits = showCredits;
+    Novel.showCredits = showCredits;
     window.addEventListener("load", start);
     //gameMenu = ƒS.Menu.create(inGameMenu, buttonFunctionalities, "gameMenu");
     function start(_event) {
         let scenes = [
-            { scene: Template.Scene, name: "Scene" }
+            { scene: Novel.ChapterOneInfrontManor, name: "SceneOne" }
         ];
         // start the sequence
-        Template.ƒS.Progress.go(scenes);
+        Novel.ƒS.Progress.go(scenes);
     }
-})(Template || (Template = {}));
+})(Novel || (Novel = {}));
 var Template;
 (function (Template) {
     async function Scene() {
