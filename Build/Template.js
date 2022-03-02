@@ -45,7 +45,7 @@ var Novel;
         await Novel.ƒS.update(0.7);
         await Novel.ƒS.Speech.tell(Novel.character.bronte, "Und eine schnelle dazu… sieht so aus als wäre sie in die Hecke verschwunden. Komisch, ich frag mich was sie da gesehen hat.");
         await Novel.ƒS.Speech.tell(Novel.character.maire, "	Vermutlich einen Vogel. Wir sollten glaube ich langsam Klopfen. Ich glaube jemand hat gerade durch das Fenster geschaut. Wir sehen ja aus wie gewöhnliche Straßendiebe für diese Leute. ");
-        let dialogCat = await Novel.ƒS.Menu.getInput(choiceCatSound, "DialogBoxPresents");
+        let dialogCat = await Novel.ƒS.Menu.getInput(choiceCatSound, "DialogBoxCatSound");
         switch (dialogCat) {
             case choiceCatSound.searchBush:
                 await Novel.ƒS.Speech.tell(Novel.character.bronte, "Nur ein Moment.");

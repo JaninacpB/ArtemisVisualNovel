@@ -61,7 +61,7 @@ namespace Novel {
         await ƒS.Speech.tell(character.bronte, "Und eine schnelle dazu… sieht so aus als wäre sie in die Hecke verschwunden. Komisch, ich frag mich was sie da gesehen hat.");
         await ƒS.Speech.tell(character.maire, "	Vermutlich einen Vogel. Wir sollten glaube ich langsam Klopfen. Ich glaube jemand hat gerade durch das Fenster geschaut. Wir sehen ja aus wie gewöhnliche Straßendiebe für diese Leute. ");
 
-        let dialogCat = await ƒS.Menu.getInput(choiceCatSound, "DialogBoxPresents");
+        let dialogCat = await ƒS.Menu.getInput(choiceCatSound, "DialogBoxCatSound");
         switch(dialogCat){
             case choiceCatSound.searchBush:
                 await ƒS.Speech.tell(character.bronte, "Nur ein Moment.");
